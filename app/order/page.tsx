@@ -1,4 +1,44 @@
+"use client";
+
+import { useState } from 'react';
+
 export default function OrderPage() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email.trim()) return;
+    setStatus('submitting');
+
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/hello@drinkjuyci.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          name: name.trim() || 'Anonymous',
+          email: email.trim(),
+          _subject: 'New JUYCI Waitlist Signup',
+          _template: 'table',
+        }),
+      });
+
+      if (res.ok) {
+        setStatus('success');
+        setName('');
+        setEmail('');
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
+  };
+
   return (
     <div style={{
       minHeight: '100vh',
@@ -20,78 +60,123 @@ export default function OrderPage() {
         }}>
           Order
         </p>
-        <h1 style={{
-          fontFamily: 'Cormorant Garamond, serif',
-          fontSize: 'clamp(3rem, 6vw, 5rem)',
-          fontWeight: 300,
-          color: '#2C2C2C',
-          marginBottom: '1.5rem',
-          letterSpacing: '0.02em',
-          lineHeight: 1.1,
-        }}>
-          Something good<br />is on its way.
-        </h1>
-        <p style={{
-          fontFamily: 'Inter, sans-serif',
-          fontSize: '0.9rem',
-          fontWeight: 300,
-          lineHeight: 1.8,
-          color: '#6B6B6B',
-          marginBottom: '3.5rem',
-        }}>
-          JUYCI is not yet available for purchase. Leave your email and you will be among the first to order when we launch.
-        </p>
-        <form style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-          <input
-            type="text"
-            placeholder="Your name"
-            style={{
-              fontFamily: 'Inter, sans-serif',
-              fontSize: '0.85rem',
+
+        {status === 'success' ? (
+          <>
+            <h1 style={{
+              fontFamily: 'Cormorant Garamond, serif',
+              fontSize: 'clamp(3rem, 6vw, 5rem)',
               fontWeight: 300,
-              padding: '1rem 1.25rem',
-              border: '1px solid rgba(44, 44, 44, 0.2)',
-              backgroundColor: 'rgba(250, 250, 248, 0.8)',
               color: '#2C2C2C',
-              outline: 'none',
+              marginBottom: '1.5rem',
               letterSpacing: '0.02em',
-            }}
-          />
-          <input
-            type="email"
-            placeholder="Your email"
-            style={{
+              lineHeight: 1.1,
+            }}>
+              You are on<br />the list.
+            </h1>
+            <p style={{
               fontFamily: 'Inter, sans-serif',
-              fontSize: '0.85rem',
+              fontSize: '0.9rem',
               fontWeight: 300,
-              padding: '1rem 1.25rem',
-              border: '1px solid rgba(44, 44, 44, 0.2)',
-              backgroundColor: 'rgba(250, 250, 248, 0.8)',
+              lineHeight: 1.8,
+              color: '#6B6B6B',
+            }}>
+              We will reach out when JUYCI is ready to ship. Something good is on its way.
+            </p>
+          </>
+        ) : (
+          <>
+            <h1 style={{
+              fontFamily: 'Cormorant Garamond, serif',
+              fontSize: 'clamp(3rem, 6vw, 5rem)',
+              fontWeight: 300,
               color: '#2C2C2C',
-              outline: 'none',
+              marginBottom: '1.5rem',
               letterSpacing: '0.02em',
-            }}
-          />
-          <button
-            type="submit"
-            style={{
-              backgroundColor: '#2C2C2C',
-              color: '#FAFAF8',
+              lineHeight: 1.1,
+            }}>
+              Something good<br />is on its way.
+            </h1>
+            <p style={{
               fontFamily: 'Inter, sans-serif',
-              fontSize: '0.7rem',
-              fontWeight: 400,
-              letterSpacing: '0.15em',
-              textTransform: 'uppercase',
-              border: 'none',
-              padding: '1rem 2.5rem',
-              cursor: 'pointer',
-              marginTop: '0.5rem',
-            }}
-          >
-            Notify Me
-          </button>
-        </form>
+              fontSize: '0.9rem',
+              fontWeight: 300,
+              lineHeight: 1.8,
+              color: '#6B6B6B',
+              marginBottom: '3.5rem',
+            }}>
+              JUYCI is not yet available for purchase. Leave your email and you will be among the first to order when we launch.
+            </p>
+            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              <input
+                type="text"
+                placeholder="Your name"
+                value={name}
+                onChange={e => setName(e.target.value)}
+                style={{
+                  fontFamily: 'Inter, sans-serif',
+                  fontSize: '0.85rem',
+                  fontWeight: 300,
+                  padding: '1rem 1.25rem',
+                  border: '1px solid rgba(44, 44, 44, 0.2)',
+                  backgroundColor: 'rgba(250, 250, 248, 0.8)',
+                  color: '#2C2C2C',
+                  outline: 'none',
+                  letterSpacing: '0.02em',
+                }}
+              />
+              <input
+                type="email"
+                placeholder="Your email"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+                required
+                style={{
+                  fontFamily: 'Inter, sans-serif',
+                  fontSize: '0.85rem',
+                  fontWeight: 300,
+                  padding: '1rem 1.25rem',
+                  border: '1px solid rgba(44, 44, 44, 0.2)',
+                  backgroundColor: 'rgba(250, 250, 248, 0.8)',
+                  color: '#2C2C2C',
+                  outline: 'none',
+                  letterSpacing: '0.02em',
+                }}
+              />
+              {status === 'error' && (
+                <p style={{
+                  fontFamily: 'Inter, sans-serif',
+                  fontSize: '0.8rem',
+                  color: '#C0392B',
+                  margin: 0,
+                }}>
+                  Something went wrong. Please try again or email us at hello@drinkjuyci.com
+                </p>
+              )}
+              <button
+                type="submit"
+                disabled={status === 'submitting'}
+                style={{
+                  backgroundColor: status === 'submitting' ? '#888' : '#2C2C2C',
+                  color: '#FAFAF8',
+                  fontFamily: 'Inter, sans-serif',
+                  fontSize: '0.7rem',
+                  fontWeight: 400,
+                  letterSpacing: '0.15em',
+                  textTransform: 'uppercase',
+                  border: 'none',
+                  padding: '1rem 2.5rem',
+                  cursor: status === 'submitting' ? 'not-allowed' : 'pointer',
+                  marginTop: '0.5rem',
+                  transition: 'background-color 0.2s',
+                }}
+              >
+                {status === 'submitting' ? 'Sending…' : 'Notify Me'}
+              </button>
+            </form>
+          </>
+        )}
       </div>
     </div>
-  )
+  );
 }
