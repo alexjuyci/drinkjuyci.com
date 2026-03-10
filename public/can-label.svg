@@ -73,9 +73,5 @@
     font-style="italic"
   >glow with every sip</text>
 
-  <!-- Three dots decoration -->
-  <circle cx="356" cy="390" r="3" fill="rgba(180,130,130,0.4)"/>
-  <circle cx="400" cy="378" r="3" fill="rgba(180,130,130,0.4)"/>
-  <circle cx="444" cy="390" r="3" fill="rgba(180,130,130,0.4)"/>
 
 </svg>
