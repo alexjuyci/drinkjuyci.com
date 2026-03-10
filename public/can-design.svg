@@ -132,19 +132,7 @@
     text-anchor="middle"
     letter-spacing="2.5"
     font-style="italic"
-  >it is summer everyday</text>
-
-  <!-- 12 fl oz -->
-  <text
-    x="150"
-    y="410"
-    font-family="Arial, sans-serif"
-    font-size="7"
-    font-weight="300"
-    fill="#9B7070"
-    text-anchor="middle"
-    letter-spacing="1.5"
-  >12 FL OZ (355 mL)</text>
+  >glow with every sip</text>
 
   <!-- Subtle top flourish dots -->
   <circle cx="126" cy="195" r="1.2" fill="rgba(180,130,130,0.35)"/>
