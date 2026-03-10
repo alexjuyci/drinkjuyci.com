@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F5ECD7;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#F2D8E0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F2C4CE;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="1000" fill="url(#bg)"/>
+
+  <!-- Top thin line -->
+  <line x1="0" y1="80" x2="800" y2="80" stroke="rgba(180,130,130,0.25)" stroke-width="1"/>
+
+  <!-- Bottom thin line -->
+  <line x1="0" y1="920" x2="800" y2="920" stroke="rgba(180,130,130,0.25)" stroke-width="1"/>
+
+  <!-- JUYCI wordmark -->
+  <text
+    x="400"
+    y="490"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="160"
+    font-weight="300"
+    fill="#2C2C2C"
+    text-anchor="middle"
+    letter-spacing="28"
+    opacity="0.88"
+  >JUYCI</text>
+
+  <!-- glow soda -->
+  <text
+    x="400"
+    y="560"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="32"
+    font-weight="300"
+    fill="#6B5555"
+    text-anchor="middle"
+    letter-spacing="14"
+    font-style="italic"
+  >glow soda</text>
+
+  <!-- Thin divider -->
+  <line x1="300" y1="600" x2="500" y2="600" stroke="rgba(180,130,130,0.5)" stroke-width="0.8"/>
+
+  <!-- LYCHEE PEACH -->
+  <text
+    x="400"
+    y="645"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="28"
+    font-weight="400"
+    fill="#8B6060"
+    text-anchor="middle"
+    letter-spacing="10"
+  >LYCHEE PEACH</text>
+
+  <!-- Thin divider -->
+  <line x1="300" y1="670" x2="500" y2="670" stroke="rgba(180,130,130,0.5)" stroke-width="0.8"/>
+
+  <!-- glow with every sip -->
+  <text
+    x="400"
+    y="720"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="20"
+    font-weight="300"
+    fill="#9B7070"
+    text-anchor="middle"
+    letter-spacing="6"
+    font-style="italic"
+  >glow with every sip</text>
+
+  <!-- Three dots decoration -->
+  <circle cx="356" cy="390" r="3" fill="rgba(180,130,130,0.4)"/>
+  <circle cx="400" cy="378" r="3" fill="rgba(180,130,130,0.4)"/>
+  <circle cx="444" cy="390" r="3" fill="rgba(180,130,130,0.4)"/>
+
+</svg>
