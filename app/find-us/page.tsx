@@ -46,7 +46,8 @@ export default function FindUsPage() {
         margin: '0 auto',
         padding: '6rem 3rem',
       }}>
-        <div style={{
+        <style>{`@media(max-width:768px){.cities-grid{grid-template-columns:1fr !important}}`}</style>
+        <div className="cities-grid" style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(3, 1fr)',
           gap: '2px',

@@ -1,7 +1,8 @@
 export default function ContactPage() {
   return (
     <div style={{ backgroundColor: '#FAFAF8', minHeight: '100vh' }}>
-      <section style={{
+      <style>{`@media(max-width:768px){.contact-grid{grid-template-columns:1fr !important}}`}</style>
+      <section className="contact-grid" style={{
         display: 'grid',
         gridTemplateColumns: '1fr 1fr',
         minHeight: '100vh',

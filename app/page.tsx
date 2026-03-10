@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Home() {
@@ -11,10 +10,10 @@ export default function Home() {
         alignItems: 'center',
         justifyContent: 'center',
         background: 'linear-gradient(135deg, #FAFAF8 0%, #F5ECD7 50%, #F2C4CE 100%)',
-        padding: '8rem 3rem 4rem',
-        gap: '6rem',
+        padding: '8rem 2rem 4rem',
+        textAlign: 'center',
       }}>
-        <div style={{ flex: 1, maxWidth: '480px' }}>
+        <div style={{ maxWidth: '600px', width: '100%' }}>
           <p style={{
             fontFamily: 'Inter, sans-serif',
             fontSize: '0.7rem',
@@ -28,7 +27,7 @@ export default function Home() {
           </p>
           <h1 style={{
             fontFamily: 'Cormorant Garamond, serif',
-            fontSize: 'clamp(3.5rem, 7vw, 6rem)',
+            fontSize: 'clamp(3rem, 10vw, 6rem)',
             fontWeight: 300,
             lineHeight: 1.05,
             color: '#2C2C2C',
@@ -44,11 +43,12 @@ export default function Home() {
             lineHeight: 1.8,
             color: '#6B6B6B',
             marginBottom: '3rem',
-            maxWidth: '360px',
+            maxWidth: '400px',
+            margin: '0 auto 3rem',
           }}>
             Sparkling coconut water crafted with natural lychee and a touch of zinc. Light, effervescent, and made for the way you live.
           </p>
-          <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
+          <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/order" style={{
               display: 'inline-block',
               backgroundColor: '#2C2C2C',
@@ -78,16 +78,6 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        <div style={{ flex: 1, maxWidth: '420px', display: 'flex', justifyContent: 'center' }}>
-          <Image
-            src="/can.jpg"
-            alt="JUYCI Lychee Peach Glow Soda"
-            width={380}
-            height={500}
-            style={{ objectFit: 'contain', maxHeight: '70vh' }}
-            priority
-          />
-        </div>
       </section>
 
       {/* Tagline strip */}
@@ -115,7 +105,12 @@ export default function Home() {
         maxWidth: '1100px',
         margin: '0 auto',
       }}>
-        <div style={{
+        <style>{`
+          @media (max-width: 768px) {
+            .features-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
+          }
+        `}</style>
+        <div className="features-grid" style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(3, 1fr)',
           gap: '4rem',
