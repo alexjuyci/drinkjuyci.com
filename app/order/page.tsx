@@ -80,9 +80,92 @@ export default function OrderPage() {
               fontWeight: 300,
               lineHeight: 1.8,
               color: '#6B6B6B',
+              marginBottom: '2.5rem',
             }}>
               We will reach out when JUYCI is ready to ship. Something good is on its way.
             </p>
+            {/* Share prompt */}
+            <p style={{
+              fontFamily: 'Inter, sans-serif',
+              fontSize: '0.7rem',
+              fontWeight: 400,
+              letterSpacing: '0.15em',
+              textTransform: 'uppercase',
+              color: '#B0A090',
+              marginBottom: '1.25rem',
+            }}>
+              Spread the word
+            </p>
+            <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+              <a
+                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent('just joined the @drinkjuyci waitlist ✨ sparkling coconut water with lychee + zinc — something good is on its way')}&url=${encodeURIComponent('https://drinkjuyci.com/order')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  fontFamily: 'Inter, sans-serif',
+                  fontSize: '0.7rem',
+                  fontWeight: 400,
+                  letterSpacing: '0.1em',
+                  textTransform: 'uppercase',
+                  color: '#2C2C2C',
+                  border: '1px solid rgba(44,44,44,0.2)',
+                  padding: '0.75rem 1.25rem',
+                  textDecoration: 'none',
+                  transition: 'background 0.2s',
+                }}
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                Share on X
+              </a>
+              <a
+                href={`https://www.instagram.com/drinkjuyci`}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  fontFamily: 'Inter, sans-serif',
+                  fontSize: '0.7rem',
+                  fontWeight: 400,
+                  letterSpacing: '0.1em',
+                  textTransform: 'uppercase',
+                  color: '#2C2C2C',
+                  border: '1px solid rgba(44,44,44,0.2)',
+                  padding: '0.75rem 1.25rem',
+                  textDecoration: 'none',
+                }}
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+                Follow us
+              </a>
+              <button
+                onClick={() => {
+                  navigator.clipboard?.writeText('https://drinkjuyci.com/order').catch(() => {});
+                }}
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  fontFamily: 'Inter, sans-serif',
+                  fontSize: '0.7rem',
+                  fontWeight: 400,
+                  letterSpacing: '0.1em',
+                  textTransform: 'uppercase',
+                  color: '#2C2C2C',
+                  border: '1px solid rgba(44,44,44,0.2)',
+                  padding: '0.75rem 1.25rem',
+                  background: 'none',
+                  cursor: 'pointer',
+                }}
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                Copy link
+              </button>
+            </div>
           </>
         ) : (
           <>
