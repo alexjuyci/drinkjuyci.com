@@ -5,10 +5,10 @@ import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'JUYCI — Glow Soda',
-  description: 'Sparkling coconut water glow soda. It is summer everyday.',
+  description: 'Sparkling coconut water glow soda. Glow with every sip.',
   openGraph: {
     title: 'JUYCI — Glow Soda',
-    description: 'Sparkling coconut water glow soda. It is summer everyday.',
+    description: 'Sparkling coconut water glow soda. Glow with every sip.',
   },
 }
 

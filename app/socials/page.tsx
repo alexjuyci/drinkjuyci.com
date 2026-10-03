@@ -9,7 +9,7 @@ const platforms = [
     name: 'TikTok',
     handle: '@drinkjuyci',
     url: 'https://tiktok.com/@drinkjuyci',
-    description: 'Recipe inspo, launch updates, and whatever is making us feel like it is summer.',
+    description: 'Recipe inspo, launch updates, and a little glow for every season.',
   },
 ]
 
@@ -52,7 +52,7 @@ export default function SocialsPage() {
           maxWidth: '380px',
           margin: '0 auto',
         }}>
-          Follow us for launch updates, recipe ideas, and whatever is making us feel like it is summer.
+          Follow us for launch updates, recipe ideas, and a little glow for every season.
         </p>
       </section>
 

@@ -34,7 +34,7 @@ export default function Home() {
             marginBottom: '2rem',
             letterSpacing: '0.02em',
           }}>
-            It is summer<br />everyday.
+            Glow with every<br />sip.
           </h1>
           <p style={{
             fontFamily: 'Inter, sans-serif',
@@ -46,10 +46,10 @@ export default function Home() {
             maxWidth: '400px',
             margin: '0 auto 3rem',
           }}>
-            Sparkling coconut water crafted with natural lychee and a touch of zinc. Light, effervescent, and made for the way you live.
+            Sparkling coconut water crafted with natural lychee and peach. Light, effervescent, and made for the way you live.
           </p>
           <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link href="/order" style={{
+            <Link href="/waitlist" style={{
               display: 'inline-block',
               backgroundColor: '#2C2C2C',
               color: '#FAFAF8',
@@ -61,7 +61,7 @@ export default function Home() {
               textDecoration: 'none',
               padding: '1rem 2.5rem',
             }}>
-              Order Now
+              Join Waitlist
             </Link>
             <Link href="/ingredients" style={{
               fontFamily: 'Inter, sans-serif',
@@ -94,7 +94,7 @@ export default function Home() {
           color: '#2C2C2C',
           letterSpacing: '0.05em',
         }}>
-          Sparkling coconut water. Natural lychee. A touch of zinc.
+          Sparkling coconut water. Natural lychee. Ripe peach.
         </p>
       </section>
 
@@ -112,13 +112,12 @@ export default function Home() {
         `}</style>
         <div className="features-grid" style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(3, 1fr)',
+          gridTemplateColumns: 'repeat(2, 1fr)',
           gap: '4rem',
         }}>
           {[
             { title: 'Coconut Water Base', body: 'Real coconut water, naturally rich in electrolytes. Hydrating without the heaviness.' },
-            { title: 'Lychee Peach', body: 'Delicate, floral, effortlessly tropical. Our first flavor is summer in a can.' },
-            { title: 'Zinc for Glow', body: 'A trace of zinc gluconate supports your skin from the inside. Beauty that you drink.' },
+            { title: 'Lychee Peach', body: 'Delicate, floral, and effortlessly refreshing. Lychee and ripe peach come together for a bright, juicy finish with a hint of endless summer.' },
           ].map(({ title, body }) => (
             <div key={title}>
               <div style={{
@@ -176,7 +175,7 @@ export default function Home() {
         }}>
           Be the first to know when JUYCI arrives.
         </p>
-        <Link href="/order" style={{
+        <Link href="/waitlist" style={{
           display: 'inline-block',
           backgroundColor: '#2C2C2C',
           color: '#FAFAF8',
@@ -188,7 +187,7 @@ export default function Home() {
           textDecoration: 'none',
           padding: '1rem 2.5rem',
         }}>
-          Notify Me
+          Join Waitlist
         </Link>
       </section>
     </div>

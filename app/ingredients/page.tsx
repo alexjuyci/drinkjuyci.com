@@ -11,13 +11,8 @@ const ingredients = [
   },
   {
     name: 'Natural Lychee & Peach Flavor',
-    description: 'Delicate, floral lychee paired with the warmth of ripe peach. Our flavor is derived from real fruit — not artificial compounds. The result is something that tastes like summer without trying too hard.',
+    description: 'Delicate, floral lychee paired with the warmth of ripe peach. Our flavor is derived from real fruit — not artificial compounds. The result is bright, juicy, and refreshing with a subtle tropical finish.',
     detail: 'No artificial flavors. No sweeteners.',
-  },
-  {
-    name: 'Zinc Gluconate',
-    description: 'A trace mineral that supports skin integrity and normal cellular function. We include a thoughtful 2.5mg per serving — enough to matter, not enough to overwhelm. Beauty has always been something you nourish, not something you paint on.',
-    detail: '2.5mg elemental zinc per serving.',
   },
   {
     name: 'Citric Acid',
@@ -67,7 +62,7 @@ export default function IngredientsPage() {
           maxWidth: '440px',
           margin: '0 auto',
         }}>
-          Five ingredients. Each one chosen with purpose. JUYCI is what happens when you stop adding and start editing.
+          Four ingredients. Each one chosen with purpose. JUYCI is what happens when you stop adding and start editing.
         </p>
       </section>
 
