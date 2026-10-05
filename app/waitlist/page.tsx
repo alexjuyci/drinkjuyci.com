@@ -15,7 +15,7 @@ export default function WaitlistPage() {
     setStatus('submitting');
 
     try {
-      const res = await fetch('https://formsubmit.co/ajax/hello@drinkjuyci.com', {
+      const res = await fetch('https://formsubmit.co/ajax/alex@drinkjuyci.com', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify({
